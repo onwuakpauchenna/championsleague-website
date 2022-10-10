@@ -1,0 +1,93 @@
+.header {
+    background-color: $color-grey-dark-1;
+    grid-column:full-start/ col-end 6 ;
+
+    background-image: linear-gradient(
+    rgba($color-blue-light-3, .93), 
+    rgba($color-blue-dark-1, .93)),
+    url(../img-m/championleague-3.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10rem;
+    padding-top: 4rem;
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-row-gap: 1.5rem;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;
+    }
+
+    &__logo {
+        height: 10rem;
+        justify-self: center;
+
+    }
+
+    &__btn {
+        background-color: $color-blue-light-2;
+        align-self: start;
+        justify-self: start;
+
+        &:hover {
+           background-color: $color-blue-dark-1;
+           color: #fff;
+        }
+    }
+
+    &__seenon-text {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+
+        font-size: 1.8rem;
+        color: $color-grey-light-2;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+
+    &__seenon-logos { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+        align-items: center;
+        transform: scale(1);
+        transition: all .2s;
+
+        img {
+            max-height: 3rem;
+            filter: brightness(70%);
+
+            &:hover,
+            &:active{
+                transform: translateY(-.3rem) scale(1.04);
+            }
+        }
+
+    }
+
+    &__supersports {
+        max-width: 7rem;
+    }
+
+    &__skysports {
+        max-width: 9rem;
+    }
+
+   
+}
